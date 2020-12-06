@@ -62,7 +62,7 @@ export class PremiumNameComponent {
           data: {
             bidder: this.model.bidder,
             newname: this.model.premiumName.toLowerCase(),
-            bid: this.model.bid.toFixed(4) + ' EOS'
+            bid: this.model.bid.toFixed(4) + ' JUN'
           }
         }]
       })

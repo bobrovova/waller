@@ -9,8 +9,8 @@
   font-family: $ff_title !important;
   color: $white !important;
   text-transform: uppercase;
-  background-color: $btn_bg !important;
-
+  background-color: #3366FF !important;
+  border-radius: 4px !important;
 }
 
 :host /deep/ .mat-button-toggle-checked {

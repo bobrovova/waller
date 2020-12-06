@@ -337,7 +337,7 @@ async SelectNameAndPermission(publicKey: string){
     try {
       let publicKey: string
       try {
-        publicKey = ecc.privateToPublic(event.target.value)
+        publicKey = ecc.privateToPublic(event.target.value).replace(/^.{3}/g, 'JUN');
       } catch {
         this.model.publicKey = ''
         this.model.accountName = ''

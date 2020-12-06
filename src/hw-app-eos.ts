@@ -31,7 +31,7 @@ export function foreach<T, A>(
 }
 
 /**
- * EOS API
+ * JUN API
  *
  * @example
  * import Eos from "@ledgerhq/hw-app-eos";
@@ -54,7 +54,7 @@ export default class Eos {
     }
 
     /**
-     * get EOS public key for a given BIP 32 path.
+     * get JUN public key for a given BIP 32 path.
      * @param path a path in BIP 32 format
      * @option boolDisplay optionally enable or not the display
      * @option boolChaincode optionally enable or not the chaincode request

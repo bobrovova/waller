@@ -87,8 +87,8 @@ export class CreateAccountComponent {
         tr.delegatebw({
           from: model.owner.toLowerCase(),
           receiver: model.name.toLowerCase(),
-          stake_net_quantity: String(model.netStake.toFixed(4)) + ' EOS',
-          stake_cpu_quantity: String(model.cpuStake.toFixed(4)) + ' EOS',
+          stake_net_quantity: String(model.netStake.toFixed(4)) + ' JUN',
+          stake_cpu_quantity: String(model.cpuStake.toFixed(4)) + ' JUN',
           transfer: Number(model.transfer | 0)
         }, options)
       })

@@ -1,12 +1,11 @@
-<nav class="navbar navbar-dark shadow-container" [ngClass]="{'open': toggleNav}">
+<nav class="navbar navbar-light shadow-container" [ngClass]="{'open': toggleNav}">
   <div class="top-line offset-lg-1 col-md-10 offset-md-1 col-sm-12">
     <div class="navbar-brand-wrapp">
-      <img src="../assets/images/logo.png" class="logo" />
       <a class="navbar-brand" href="/">{{'main-navbar.title' | translate}}</a>
     </div>
     <div class="info-block">
       <div class="dropdown-wrapp my-auto">
-        <mat-form-field class="dropdown white no-padding">
+        <mat-form-field class="dropdown select-padding" appearance="none">
           <mat-select [(ngModel)]="selectedNetwork" name="network">
             <mat-option *ngFor="let network of networks; let i = index"
                         [value]="network.host"
@@ -18,16 +17,16 @@
           </mat-select>
         </mat-form-field>
       </div>
-
+<!--
       <div class="dropdown-wrapp my-auto">
-        <mat-form-field class="dropdown white no-padding">
+        <mat-form-field class="dropdown select-padding">
           <mat-select [(ngModel)]="selectedLanguage" name="lang" (selectionChange)="langChanged()">
             <mat-option *ngFor="let lang of languages" [value]="lang.value">
               {{lang.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-      </div>
+      </div>-->
 
       <div *ngIf="displayLogOut()" class="logo-wrapp dropdown" [ngSwitch]="loginIcon" data-toggle="dropdown">
 

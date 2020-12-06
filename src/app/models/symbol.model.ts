@@ -1,6 +1,6 @@
 export enum SymbolParametr {
     jungle = 'Jungle',
-    eos = 'EOS',
+    eos = 'JUN',
     horustokenio = 'Horustokenio',
     everipediaiq = 'Everipediaiq',
     therealkarma = 'Therealkarma',

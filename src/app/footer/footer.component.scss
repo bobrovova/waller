@@ -30,7 +30,7 @@ $footer_m_h: 13px;
 
       .mat-icon,
       .copyright {
-        color: $blue;
+        color: $dark_blue;
       }
     }
 
@@ -50,6 +50,10 @@ $footer_m_h: 13px;
               }
           }
         }
+      }
+      .copyright {
+        color: $dark_blue;
+        font-weight: $fw_bold;
       }
     }
   }

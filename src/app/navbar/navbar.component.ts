@@ -102,14 +102,14 @@ export class NavbarComponent {
     ))
     this.networks.push(new Network(
       'api.eosnewyork.io',
-      'Mainnet (EOS New York)',
+      'Mainnet (JUN New York)',
       NetworkChaindId.MainNet,
       443,
       NetworkProtocol.Https
     ))
     this.networks.push(new Network(
       'api.eosn.io',
-      'Mainnet (EOS Nation)',
+      'Mainnet (JUN Nation)',
       NetworkChaindId.MainNet,
       443,
       NetworkProtocol.Https

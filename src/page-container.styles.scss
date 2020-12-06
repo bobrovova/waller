@@ -39,7 +39,6 @@
   }
   .header{
     margin-bottom: $block_p_h;
-    text-transform: uppercase;
   }
   .item-form{
     margin-bottom: ($block_p_h / 4);
@@ -105,8 +104,9 @@
 
 
 .header {
-  text-transform: uppercase;
   text-align: center;
+  font-weight: $fw_bold;
+  color: $dark_blue;
 }
 
 .title {

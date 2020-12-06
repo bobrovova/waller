@@ -54,7 +54,7 @@ export class SetRamRateComponent implements OnInit {
     this.loginService.setupEos().then(obj => {
       this.eos = obj.eos
       this.network = obj.network
-    }).catch(e => console.warn('EOS ERR', e))
+    }).catch(e => console.warn('JUN ERR', e))
   }
 
   async onSubmit () {

@@ -36,10 +36,10 @@
         <div class="col-sm-2 col-xs-4"><span class="info-title">{{'find-account.total-balance' | translate}}:</span></div>
         <div class="col-sm-10 col-xs-8">
           <div class="info" *ngIf="!elem?.total_balance_cut[1];else doubleTotal"><span class="font-weight-bold">{{elem?.total_balance_cut[0]}}
-              EOS</span></div>
+              JUN</span></div>
           <ng-template #doubleTotal>
             <div class="info"><span class="font-weight-bold">{{elem?.total_balance_cut[0]}}</span>.{{elem?.total_balance_cut[1]}}
-              EOS / <span class="text-sepia"> {{result?.usd_total | number}} USD</span></div>
+              JUN / <span class="text-sepia"> {{result?.usd_total | number}} USD</span></div>
           </ng-template>
         </div>
       </div>

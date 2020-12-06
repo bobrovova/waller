@@ -104,8 +104,8 @@ export class FindAccountComponent implements OnInit {
         this.result.net_self_stacked = this.result.self_delegated_bandwidth.net_weight
         this.result.cpu_self_stacked = this.result.self_delegated_bandwidth.cpu_weight
         this.result.staked = this.result.voter_info.staked / 10000
-        this.result.cpu_other_stacked = (Number(this.result.cpu_stacked.split(' ', 1)[0]) - Number(this.result.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
-        this.result.net_other_stacked = (Number(this.result.net_stacked.split(' ', 1)[0]) - Number(this.result.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
+        this.result.cpu_other_stacked = (Number(this.result.cpu_stacked.split(' ', 1)[0]) - Number(this.result.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
+        this.result.net_other_stacked = (Number(this.result.net_stacked.split(' ', 1)[0]) - Number(this.result.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
         this.result.balance_cut = this.result.core_liquid_balance ? this.result.core_liquid_balance.split('.', 2) : []
         this.result.netData = this.result.total_resources.net_weight.split(' ', 1)
         this.result.cpuData = this.result.total_resources.cpu_weight.split(' ', 1)
@@ -157,9 +157,9 @@ export class FindAccountComponent implements OnInit {
             } else {
               this.data.getTokensEosflare(this.result.account_name).subscribe((response) => {
                 if (response && response.account) {
-                  this.data.getTokenInfo('{"code":"' + 'eosio.token' + '","account":"' + this.result.account_name + '"}').subscribe((EOS) => {
+                  this.data.getTokenInfo('{"code":"' + 'eosio.token' + '","account":"' + this.result.account_name + '"}').subscribe((JUN) => {
                     this.result.tokens = this.setTokensEosflareSymbol(tokens.account.tokens, this.result.account_name)
-                    this.result.tokens.push({ international: 'EOS', token: 'eosio.token', balance: EOS.toString().split(' ')[0] })
+                    this.result.tokens.push({ international: 'JUN', token: 'eosio.token', balance: JUN.toString().split(' ')[0] })
                   })
                 } else {
                   this.data.getAllTokensInfo(tokenList.tokens, this.result.account_name).subscribe((tokensResult) => {
@@ -226,8 +226,8 @@ export class FindAccountComponent implements OnInit {
               this.result.net_self_stacked = this.result.self_delegated_bandwidth.net_weight
               this.result.cpu_self_stacked = this.result.self_delegated_bandwidth.cpu_weight
               this.result.staked = this.result.voter_info.staked / 10000
-              this.result.cpu_other_stacked = (Number(this.result.cpu_stacked.split(' ', 1)[0]) - Number(this.result.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
-              this.result.net_other_stacked = (Number(this.result.net_stacked.split(' ', 1)[0]) - Number(this.result.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
+              this.result.cpu_other_stacked = (Number(this.result.cpu_stacked.split(' ', 1)[0]) - Number(this.result.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
+              this.result.net_other_stacked = (Number(this.result.net_stacked.split(' ', 1)[0]) - Number(this.result.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
               this.result.balance_cut = this.result.core_liquid_balance ? this.result.core_liquid_balance.split('.', 2) : []
               this.result.netData = this.result.total_resources.net_weight.split(' ', 1)
               this.result.cpuData = this.result.total_resources.cpu_weight.split(' ', 1)
@@ -281,9 +281,9 @@ export class FindAccountComponent implements OnInit {
                   } else {
                     this.data.getTokensEosflare(this.result.account_name).subscribe((response) => {
                       if (response && response.account) {
-                        this.data.getTokenInfo('{"code":"' + 'eosio.token' + '","account":"' + this.result.account_name + '"}').subscribe((EOS) => {
+                        this.data.getTokenInfo('{"code":"' + 'eosio.token' + '","account":"' + this.result.account_name + '"}').subscribe((JUN) => {
                           this.result.tokens = this.setTokensEosflareSymbol(tokens.account.tokens, this.result.account_name)
-                          this.result.tokens.push({ international: 'EOS', token: 'eosio.token', balance: EOS.toString().split(' ')[0] })
+                          this.result.tokens.push({ international: 'JUN', token: 'eosio.token', balance: JUN.toString().split(' ')[0] })
                         })
                       } else {
                         this.data.getAllTokensInfo(tokenList.tokens, this.result.account_name).subscribe((tokensResult) => {

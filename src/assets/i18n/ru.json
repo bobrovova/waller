@@ -5,7 +5,7 @@
     "recipient": "Получатель",
     "quantity": "Количество",
     "sender": "Отправитель",
-    "title-text": "отправить EOS и Токены",
+    "title-text": "отправить JUN и Токены",
     "send": "Отправить",
     "symbol-required": "Введите символ",
     "quantity-required": "Требуется ввести количество",
@@ -19,13 +19,13 @@
   "generate-key-pair":{
     "title": "Генерировать ключи",
     "upper-block": "Сохраните личный ключ, указанный ниже, в нескольких безопасных местах, прежде чем продолжить. Необходимо сделать несколько копий и сохранить все копии в разных безопасных местах. Если вы используете внешнее запоминающее устройство, например USB-накопитель, перед тем, как продолжить, обязательно удалите устройство.",
-    "lower-block": "Невозможно восстановить секретный ключ. Вы должны сохранить его прямо сейчас, иначе вы не сможете получить доступ к своим токенам EOS по завершении продажи."
+    "lower-block": "Невозможно восстановить секретный ключ. Вы должны сохранить его прямо сейчас, иначе вы не сможете получить доступ к своим токенам JUN по завершении продажи."
   },
   "delegate": {
     "header": "Делегировать",
     "tooltip": "Transfer Off: Владелец сохраняет право владения и право голоса Transfer On: Новый пользователь получает право владения и право голоса",
-    "cpu": "CPU Stake (EOS)",
-    "net": "NET Stake (EOS)",
+    "cpu": "CPU Stake (JUN)",
+    "net": "NET Stake (JUN)",
     "cpu-required": "CPU stake is required",
     "net-required": "NET stake is required",
     "recipient-name": "Имя получателя",
@@ -38,11 +38,11 @@
     "wrong-password": "Password not match",
     "account-not-found": "Account with this key was not found",
     "scatter-locked": "Scatter заблокирован",
-    "eos-plugin-unlock-message":"Please unlock EOS Plugin",
+    "eos-plugin-unlock-message":"Please unlock JUN Plugin",
     "you-have":"Вам требуется установить <a href='{{link}}' target='_blank'> {{name}} </a> .",
-    "eos-plugin-locked": "EOS plugin заблокирован",
+    "eos-plugin-locked": "JUN plugin заблокирован",
     "you-have-scatter":"You have to install <a href='{{pluginLink}}' target='_blank'> Scatter Plugin </a> .",
-    "you-have-eos-plugin":"You have to install <a href='{{pluginLink}}' target='_blank'> EOS Plugin </a> .",
+    "you-have-eos-plugin":"You have to install <a href='{{pluginLink}}' target='_blank'> JUN Plugin </a> .",
     "info": "Info",
     "open-info": "Show details",
     "failure": "Ошибка",
@@ -60,7 +60,7 @@
   },
   "popup": {
     "cookies": "To ensure your safety and to provide you with relevant information, we use cookies, and also collect data via Google Analytics.",
-    "oficial": "EOSWebWallet.io is an official site and does not cooperate with any other resources. Please always check out the correctness of the query in the browser search string."
+    "oficial": "JUNWebWallet.io is an official site and does not cooperate with any other resources. Please always check out the correctness of the query in the browser search string."
   },
   "dialog-add-network": {
     "header": "Добавить сеть",
@@ -94,8 +94,8 @@
     "length-required": "Length should be exactly 12 symbols",
     "operation-completed": "Operation completed",
     "account-missing": "Account with this name is missing",
-    "cpu": "CPU Stake (EOS)",
-    "net": "NET Stake (EOS)",
+    "cpu": "CPU Stake (JUN)",
+    "net": "NET Stake (JUN)",
     "cpu-required": "CPU stake is required",
     "net-required": "NET stake is required"
   },
@@ -108,7 +108,7 @@
     "receiver-is-required": "Необходимо заполнить поле получателя.",
     "ram-purchase": "Купить RAM",
     "ram-is-required": "Необходимо ввести RAM",
-    "eos": "EOS",
+    "eos": "JUN",
     "bytes": "Bytes",
     "ram": "RAM",
     "sell-ram": "Продать RAM",
@@ -263,7 +263,7 @@
   },
   "other": {
     "contract-viewed": "The ricardian contract may be viewed in the Scatter approval prompt.",
-    "bid-in-eos": "Цена в EOS",
+    "bid-in-eos": "Цена в JUN",
     "new-name": "Новое имя",
     "bidder": "Покупатель",
     "bytes": "(bytes)",
@@ -291,7 +291,7 @@
     "owner-is-required": "Заполните поле «Владелец»",
     "claim-rewards": "Запросить вознаграждение",
     "bid-on-name": "Сделать ставку на имя",
-    "bid-on-name-info-bar": "Ставка должна быть на 10% больше, чем предыдущая ставка. Выполняя это действие, вы подтверждаете, что ознакомлены с концепцией EOS и <a href='#'>рикардинским договором </a>.",
+    "bid-on-name-info-bar": "Ставка должна быть на 10% больше, чем предыдущая ставка. Выполняя это действие, вы подтверждаете, что ознакомлены с концепцией JUN и <a href='#'>рикардинским договором </a>.",
     "new-name-is-required": "Необходимо заполнить поле 'Новое имя'",
     "name-settings": "Name should start from dot and may only include the characters 12345abcdefghijklmnopqrstuvwxyz",
     "bid-is-required": "Bid is required field",
@@ -310,7 +310,7 @@
     "max-inline-action-size": "Max inline action size",
     "max-inline-action-depth": "Max inline action depth",
     "max-auth-depth": "Max authority depth",
-    "claim-warning": "Выполняя это действие, вы подтверждаете, что ознакомлены с концепцией EOS и рикардианским договором. Ознакомиться с ricardian contract возможно в Scatter approval prompt."
+    "claim-warning": "Выполняя это действие, вы подтверждаете, что ознакомлены с концепцией JUN и рикардианским договором. Ознакомиться с ricardian contract возможно в Scatter approval prompt."
   },
   "name-binds": {
     "search": "Найти",
@@ -325,7 +325,7 @@
     "total-balance": "Баланс",
     "staked": "Staked",
     "unstaked": "Unstaked",
-    "eos": "EOS",
+    "eos": "JUN",
     "cpu": "CPU",
     "net": "NET",
     "ram": "RAM",
@@ -342,7 +342,7 @@
   "login": {
     "connect-account": "ПОДКЛЮЧИТЬ АККАУНТ",
     "scatter-plugin": "Scatter plugin",
-    "eos-plugin": "EOS plugin",
+    "eos-plugin": "JUN plugin",
     "private-key": "Закрытый ключ",
     "ledger": "Ledger",
     "data": "EosWebWallet не хранит вашу информацию. Мы не имеем доступа к учетным записям, а также не можем восстанавливать ключи, сбрасывать пароли или отзывать транзакции. Информация о секретном ключе хранится Вами локально.",
@@ -355,13 +355,13 @@
   "footer":{
     "copyright": "Copyright",
     "info": {
-      "text1": "EosWebWallet представляет собой бесплатный клиентоориентированный интерфейс с открытым исходным кодом для передачи EOS и токенов. Информация о секретном ключе хранится вами локально. Только вы несете ответственность за свою безопасность.EosWebWallet не является создателем и не имеет никакого контроля над любым из цифровых активов, которые программа позволяет вам использовать.",
+      "text1": "EosWebWallet представляет собой бесплатный клиентоориентированный интерфейс с открытым исходным кодом для передачи JUN и токенов. Информация о секретном ключе хранится вами локально. Только вы несете ответственность за свою безопасность.EosWebWallet не является создателем и не имеет никакого контроля над любым из цифровых активов, которые программа позволяет вам использовать.",
       "text2": "Если вы заметили уязвимость в программном обеспечении, сообщите нам по адресу support@eoswebwallet.io."
     }
   },
   "common": {
     "voter": "Участник голосования",
-    "agree-constitution": "By executing this action you are agreeing to the EOS constitution and this actions associated",
+    "agree-constitution": "By executing this action you are agreeing to the JUN constitution and this actions associated",
     "ricardian-contract": "ricardian contract",
     "true": "да",
     "false": "нет",
@@ -392,7 +392,7 @@
   "errors": {
     "account-name-is-required": "Необходимо ввести учетную запись",
     "scatter-not": "Scatter plugin не обнаружен.",
-    "eos-plugin-not": "EOS plugin не обнаружен.",
+    "eos-plugin-not": "JUN plugin не обнаружен.",
     "account-name": "Учётная запись",
     "is-required": "is required field",
     "length-warning": "Length should be exactly 12 symbols"
@@ -430,8 +430,8 @@
     "claim": "Запросить"
   },
   "main-navbar":{
-    "title": "EOS Web Wallet",
-    "send-eos": "Отправить EOS и Токены",
+    "title": "JUN Web Wallet",
+    "send-eos": "Отправить JUN и Токены",
     "gen-key-pair": "Генерировать ключи",
     "manage-acc": "Управлять аккаунтом",
     "manage-voit": "Управлять голосованием",
@@ -473,7 +473,7 @@
     "voter-producer": "Голосовать за производителя блоков"
   },
   "info":{
-    "transferTokens": "Вы можете отправить EOS и токены одному или нескольким пользователям напрямую без посредников с помощью EosWebWallet. Будьте внимательны при вводе адреса получателя, платеж не может быть отозван в случае ошибки. Вы также можете импортировать файл CSV с данными реципиентов для отправки цифровых активов.",
+    "transferTokens": "Вы можете отправить JUN и токены одному или нескольким пользователям напрямую без посредников с помощью EosWebWallet. Будьте внимательны при вводе адреса получателя, платеж не может быть отозван в случае ошибки. Вы также можете импортировать файл CSV с данными реципиентов для отправки цифровых активов.",
     "generateKeyPairs": "Вы можете сгенерировать пары ваших ключей для доступа к аккаунту. Эти ключи не хранятся на сервере и отображаются только в вашем браузере. Ваш приватный ключ не сможет быть восстановлен, в случае если вы утеряете его. Сделайте резервные копии ключей и храните их в отдельных защищенных местах. ",
     "manageAccount":{
       "refundStake":"В данном разделе вы можете производить необходимые настройки CPU, NET и RAM, предоставлять аккаунту привелегии , управлять глобальными ограничениями аккаунта, отменять транзакции в случае ошибки, получать вознаграждение, изменять имя аккаунта на более читаемое.",
@@ -553,7 +553,7 @@
         "answer": "We don't store your keys, they located in your Browser local storage, so we don't know them and can't restore. Remember: We do not store any user private data."
       },
       {
-        "question": "Can I stake/unstake my EOS in your wallet?",
+        "question": "Can I stake/unstake my JUN in your wallet?",
         "answer": "Yes, you can perform these actions also as others: vote, delegate, create new accounts and much more. Just log in your account."
       },
       {
@@ -562,19 +562,19 @@
       },
       {
         "question": "Do you support Airdrops?",
-        "answer": "We support all major EOS airdrops, contact us in <a href='{{link}}'>telegram</a> if we missed the good one."
+        "answer": "We support all major JUN airdrops, contact us in <a href='{{link}}'>telegram</a> if we missed the good one."
       },
       {
         "question": "I am developer, can I use your code?",
         "answer": "Yes, we have created open source software, so you can fork or update it."
       },
       {
-        "question": "Can I restore my EOS wallet in other device?",
+        "question": "Can I restore my JUN wallet in other device?",
         "answer": "Yes, you can restore your wallet in any device. You should only know your Private keys or be logged in Scatter."
       },
       {
         "question": "Houston, we have a problem. Who can help me?",
-        "answer": "In case you have problems in connection to our wallet, work with accounts, managing your EOS and others - just contact us via <a href='{{link}}'>telegram</a>, we would be happy to assist you."
+        "answer": "In case you have problems in connection to our wallet, work with accounts, managing your JUN and others - just contact us via <a href='{{link}}'>telegram</a>, we would be happy to assist you."
       }
     ]
   }

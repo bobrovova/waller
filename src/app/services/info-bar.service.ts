@@ -129,9 +129,9 @@ export class InfoBarService implements OnInit, OnDestroy {
                 } else {
                   this.data.getTokensGreymass(AccountName).subscribe((response) => {
                     if (response && response.account) {
-                      this.data.getTokenInfo('{"code":"' + 'eosio.token' + '","account":"' + AccountName + '"}').subscribe((EOS) => {
+                      this.data.getTokenInfo('{"code":"' + 'eosio.token' + '","account":"' + AccountName + '"}').subscribe((JUN) => {
                         this.tokenStringTemp = this.setTokensEosflareSymbol(response.account.tokens, AccountName)
-                        this.tokenStringTemp += ' ' + EOS[0].toString()
+                        this.tokenStringTemp += ' ' + JUN[0].toString()
                       })
                     } else {
                       this.data.getAllTokensInfo(tokenList.tokens, AccountName).subscribe((tokensResult) => {
@@ -151,8 +151,8 @@ export class InfoBarService implements OnInit, OnDestroy {
             this.accountInfo.net_stacked = this.accountInfo.total_resources.net_weight
             this.accountInfo.net_self_stacked = this.accountInfo.self_delegated_bandwidth.net_weight
             this.accountInfo.cpu_self_stacked = this.accountInfo.self_delegated_bandwidth.cpu_weight
-            this.accountInfo.cpu_other_stacked = (Number(this.accountInfo.cpu_stacked.split(' ', 1)[0]) - Number(this.accountInfo.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
-            this.accountInfo.net_other_stacked = (Number(this.accountInfo.net_stacked.split(' ', 1)[0]) - Number(this.accountInfo.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
+            this.accountInfo.cpu_other_stacked = (Number(this.accountInfo.cpu_stacked.split(' ', 1)[0]) - Number(this.accountInfo.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
+            this.accountInfo.net_other_stacked = (Number(this.accountInfo.net_stacked.split(' ', 1)[0]) - Number(this.accountInfo.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
 
 
             if (!isNull(this.accountInfo.refund_request)) {
@@ -181,8 +181,8 @@ export class InfoBarService implements OnInit, OnDestroy {
             this.accountInfo.net_stacked = this.accountInfo.total_resources.net_weight
             this.accountInfo.net_self_stacked = this.accountInfo.self_delegated_bandwidth.net_weight
             this.accountInfo.cpu_self_stacked = this.accountInfo.self_delegated_bandwidth.cpu_weight
-            this.accountInfo.cpu_other_stacked = (Number(this.accountInfo.cpu_stacked.split(' ', 1)[0]) - Number(this.accountInfo.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
-            this.accountInfo.net_other_stacked = (Number(this.accountInfo.net_stacked.split(' ', 1)[0]) - Number(this.accountInfo.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' EOS'
+            this.accountInfo.cpu_other_stacked = (Number(this.accountInfo.cpu_stacked.split(' ', 1)[0]) - Number(this.accountInfo.cpu_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
+            this.accountInfo.net_other_stacked = (Number(this.accountInfo.net_stacked.split(' ', 1)[0]) - Number(this.accountInfo.net_self_stacked.split(' ', 1)[0])).toFixed(4).toString() + ' JUN'
             this.accountInfo.total_balance = (Number(this.stacked) + Number(this.unstacked)).toString()
             this.data.getCurrentCourse().subscribe((result) => {
               this.accountInfo.usd_total = Number(this.accountInfo.total_balance) * Number(result.market_data.current_price.usd)

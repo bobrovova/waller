@@ -64,8 +64,8 @@ export class DelegateComponent {
         tr.delegatebw({
           from: this.accountName,
           receiver: model.recipient.toLowerCase(),
-          stake_net_quantity: String(model.net.toFixed(4)) + ' EOS',
-          stake_cpu_quantity: String(model.cpu.toFixed(4)) + ' EOS',
+          stake_net_quantity: String(model.net.toFixed(4)) + ' JUN',
+          stake_cpu_quantity: String(model.cpu.toFixed(4)) + ' JUN',
           transfer: Number(model.transfer | 0)
         }, options)
       })

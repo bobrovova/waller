@@ -1,6 +1,6 @@
 export enum Unit {
   bytes = 'Bytes',
-  eos = 'EOS'
+  eos = 'JUN'
 }
 
 export class SetRamRate {

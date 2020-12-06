@@ -15,7 +15,7 @@
 
   .info-text{
     font-family: $ff;
-    color: $blue;
+    color: #3366FF;
     font-weight: $fw_bold;
     &.regular{
       font-weight: $fw;
@@ -50,8 +50,11 @@
     }
   }
   .mat-form-field-wrapper{
+    border-radius: 4px;
     .mat-form-field-flex{
       padding-left: 15px;
+      background-color: #F7F9FC;
+      padding-bottom: 10px;
     }
   }
   &.no-padding{
@@ -59,6 +62,19 @@
       .mat-form-field-flex{
         padding-left: 0;
       }
+    }
+  }
+  &.select-padding{
+    .mat-form-field-wrapper{
+      .mat-form-field-flex{
+        padding-right: 15px;
+        background-color: white;
+        .mat-select-value-text {
+          color: $dark-blue;
+          font-weight: $fw_bold;
+        }
+      }
+
     }
   }
   &.text-area{

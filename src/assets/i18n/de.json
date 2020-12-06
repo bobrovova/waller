@@ -5,7 +5,7 @@
     "recipient": "Empfänger",
     "quantity": "Menge",
     "sender": "Absender",
-    "title-text": "EOS & TOKEN SENDEN",
+    "title-text": "JUN & TOKEN SENDEN",
     "send": "Senden",
     "symbol-required": "Symbol ist erforderlich",
     "quantity-required": "Menge ist erforderlich",
@@ -19,13 +19,13 @@
   "generate-key-pair":{
     "title": "Schlüsselpaare generieren ",
     "upper-block": "Bitte sichern Sie den unten angezeigten privaten Schlüssel an mehreren sicheren Orten, bevor Sie fortfahren. Sie sollten mehr als eine Kopie erstellen und alle Kopien an einem sicheren Ort aufbewahren. Wenn Sie ein externes Speichergerät wie einen USB-Stick verwenden, müssen Sie das Gerät sicher auswerfen, bevor Sie fortfahren.",
-    "lower-block": "Es gibt keine Möglichkeit, Ihren privaten Schlüssel wiederherzustellen. Sie müssen es jetzt speichern oder Sie können nicht auf Ihre EOS-Token zugreifen, wenn der Verkauf endet."
+    "lower-block": "Es gibt keine Möglichkeit, Ihren privaten Schlüssel wiederherzustellen. Sie müssen es jetzt speichern oder Sie können nicht auf Ihre JUN-Token zugreifen, wenn der Verkauf endet."
   },
   "delegate": {
     "header": "Delegate",
     "tooltip": "Transfer Off: Ein Besitzer behält die Kontrolle über die Absteckung und die Stimmrechte. Transfer On: Ein neues Konto erhält Kontrolle und Stimmrechte.",
-    "cpu": "CPU Stake (EOS)",
-    "net": "NET Stake (EOS)",
+    "cpu": "CPU Stake (JUN)",
+    "net": "NET Stake (JUN)",
     "cpu-required": "CPU stake is required",
     "net-required": "NET stake is required",
     "recipient-name": "Empfängername",
@@ -38,10 +38,10 @@
     "wrong-password": "Password not match",
     "account-not-found": "Account with this key was not found",
     "scatter-locked": "Scatter locked",
-    "eos-plugin-locked": "EOS plugin locked",
-    "eos-plugin-unlock-message":"Please unlock EOS Plugin",
+    "eos-plugin-locked": "JUN plugin locked",
+    "eos-plugin-unlock-message":"Please unlock JUN Plugin",
     "you-have-scatter":"You have to install <a href='{{pluginLink}}' target='_blank'> Scatter Plugin </a> .",
-    "you-have-eos-plugin":"You have to install <a href='{{pluginLink}}' target='_blank'> EOS Plugin </a> .",
+    "you-have-eos-plugin":"You have to install <a href='{{pluginLink}}' target='_blank'> JUN Plugin </a> .",
     "you-have":"Sie müssen <a href='{{link}}' target='_blank'> {{name}} </a> installieren.",
     "info": "Info",
     "failure": "Ausfall",
@@ -59,7 +59,7 @@
   },
   "popup": {
     "cookies": "To ensure your safety and to provide you with relevant information, we use cookies, and also collect data via Google Analytics.",
-    "oficial": "EOSWebWallet.io is an official site and does not cooperate with any other resources. Please always check out the correctness of the query in the browser search string."
+    "oficial": "JUNWebWallet.io is an official site and does not cooperate with any other resources. Please always check out the correctness of the query in the browser search string."
   },
   "dialog-add-network": {
     "header": "Neues Netzwerk hinzufügen",
@@ -93,8 +93,8 @@
     "length-required": "Length should be exactly 12 symbols",
     "operation-completed": "Operation completed",
     "account-missing": "Account with this name is missing",
-    "cpu": "CPU Stake (EOS)",
-    "net": "NET Stake (EOS)",
+    "cpu": "CPU Stake (JUN)",
+    "net": "NET Stake (JUN)",
     "cpu-required": "CPU stake is required",
     "net-required": "NET stake is required"
   },
@@ -107,7 +107,7 @@
     "receiver-is-required": "Empfänger ist erforderlich",
     "ram-is-required": "RAM  ist erfordelich",
     "ram-purchase": "RAM kaufen",
-    "eos": "EOS",
+    "eos": "JUN",
     "bytes": "Bytes",
     "ram": "RAM",
     "sell-ram": "RAM Verkaufen",
@@ -261,7 +261,7 @@
   },
   "other": {
     "contract-viewed": "Der Ricardian-Vertrag kann in der Scatter approval prompt angezeigt werden.",
-    "bid-in-eos": "Gebot (EOS)",
+    "bid-in-eos": "Gebot (JUN)",
     "new-name": "Neuer Name",
     "bidder": "Bieter",
     "bytes": "(bytes)",
@@ -289,7 +289,7 @@
     "owner-is-required": "Besitzer ist erforderlich",
     "claim-rewards": "Claim rewards",
     "bid-on-name": "Bid on Name",
-    "bid-on-name-info-bar": "Das Gebot muss 10% höher als das vorherige Gebot sein. Mit der Durchführung dieser Aktion stimmen Sie der EOS-Verfassung und dem damit verbundenen<a href='#'>rricardianischen Vertrag zu</a>",
+    "bid-on-name-info-bar": "Das Gebot muss 10% höher als das vorherige Gebot sein. Mit der Durchführung dieser Aktion stimmen Sie der JUN-Verfassung und dem damit verbundenen<a href='#'>rricardianischen Vertrag zu</a>",
     "new-name-is-required": "Neuer Name ist erforderlich",
     "name-settings": "Name should start from dot and may only include the characters 12345abcdefghijklmnopqrstuvwxyz",
     "bid-is-required": "Bid is required field",
@@ -308,7 +308,7 @@
     "max-inline-action-size": "Max inline action size",
     "max-inline-action-depth": "Max inline action depth",
     "max-auth-depth": "Max authority depth",
-    "claim-warning": "Indem Sie diese Aktion ausführen, stimmen Sie der EOS-Verfassung und dem damit verbundenen Ricardian-Vertrag zu. Der Ricardian-Vertrag kann in der Scatter approval prompt angezeigt werden."
+    "claim-warning": "Indem Sie diese Aktion ausführen, stimmen Sie der JUN-Verfassung und dem damit verbundenen Ricardian-Vertrag zu. Der Ricardian-Vertrag kann in der Scatter approval prompt angezeigt werden."
   },
   "name-binds": {
     "search": "Search",
@@ -323,7 +323,7 @@
     "total-balance": "Gesamtsalto",
     "staked": "Staked",
     "unstaked": "Unstaked",
-    "eos": "EOS",
+    "eos": "JUN",
     "cpu": "CPU",
     "net": "NET",
     "ram": "RAM",
@@ -339,7 +339,7 @@
   "login": {
     "connect-account": "Konto verbinden",
     "scatter-plugin": "Scatter plugin",
-    "eos-plugin": "EOS plugin",
+    "eos-plugin": "JUN plugin",
     "private-key": "Privat Schlüssel",
     "ledger": "Ledger",
     "data": "EosWebWallet speichert Ihre Daten nicht. Wir können nicht auf Konten zugreifen, Schlüssel wiederherstellen, Kennwörter zurücksetzen oder Transaktionen stornieren. Private Schlüsselinformationen werden lokal von Ihnen gespeichert.",
@@ -351,7 +351,7 @@
   },
   "common": {
     "voter": "Wähler",
-    "agree-constitution": "Indem Sie diese Aktion ausführen, stimmen Sie der EOS-Verfassung und dem damit verbundenen Ricardian-Vertrag zu.",
+    "agree-constitution": "Indem Sie diese Aktion ausführen, stimmen Sie der JUN-Verfassung und dem damit verbundenen Ricardian-Vertrag zu.",
     "ricardian-contract": "ricardian contract",
     "true": "wahr",
     "false": "falsch",
@@ -382,7 +382,7 @@
   "errors": {
     "account-name-is-required": "Kontoname ist  erforderlich",
     "scatter-not": "Scatter plugin wird nicht erkannt.",
-    "eos-plugin-not": "EOS plugin is not detected.",
+    "eos-plugin-not": "JUN plugin is not detected.",
     "account-name": "Kontoname",
     "is-required": "ist erforderlich",
     "length-warning": "Length should be exactly 12 symbols"
@@ -420,8 +420,8 @@
     "claim": "Beanspruchen"
   },
   "main-navbar":{
-    "title": "EOS Web Wallet",
-    "send-eos": "EOS & token senden",
+    "title": "JUN Web Wallet",
+    "send-eos": "JUN & token senden",
     "gen-key-pair": "Schlüsselpaare generieren ",
     "manage-acc": "Konto verwalten",
     "manage-voit": "Abstimmung verwalten",
@@ -465,12 +465,12 @@
   "footer":{
     "copyright": "Copyright",
     "info": {
-      "text1": "EosWebWallet bietet eine kostenlose, Open-Source, Client-orientierte Schnittstelle für die Übertragung von EOS & Tokens. Private Schlüsselinformationen werden lokal von Ihnen gespeichert. Sie sind für Ihre Sicherheit verantwortlich.EosWebWallet ist nicht der Ersteller von Digital Assets, die Sie verwenden dürfen, und hat auch keine Kontrolle darüber.",
+      "text1": "EosWebWallet bietet eine kostenlose, Open-Source, Client-orientierte Schnittstelle für die Übertragung von JUN & Tokens. Private Schlüsselinformationen werden lokal von Ihnen gespeichert. Sie sind für Ihre Sicherheit verantwortlich.EosWebWallet ist nicht der Ersteller von Digital Assets, die Sie verwenden dürfen, und hat auch keine Kontrolle darüber.",
       "text2": "Falls Sie eine Sicherheitslücke in der Software entdeckt haben, informieren Sie uns bitte unter support@eoswebwallet.io."
     }
   },
   "info":{
-    "transferTokens": "Senden Sie EOS und Tokens direkt an einen oder mehrere Benutzer ohne Vermittler mit EosWebWallet. Seien Sie vorsichtig bei der Eingabe der Adresse des Empfängers, da die Transaktion im Falle eines Fehlers nicht zurückgenommen werden kann. Sie können auch eine CSV-Datei mit Empfängerdaten importieren, um digitale Assets zu übertragen.",
+    "transferTokens": "Senden Sie JUN und Tokens direkt an einen oder mehrere Benutzer ohne Vermittler mit EosWebWallet. Seien Sie vorsichtig bei der Eingabe der Adresse des Empfängers, da die Transaktion im Falle eines Fehlers nicht zurückgenommen werden kann. Sie können auch eine CSV-Datei mit Empfängerdaten importieren, um digitale Assets zu übertragen.",
     "generateKeyPairs": "Sie können ein Paar Ihrer Schlüssel generieren, um auf Ihr Konto zuzugreifen. Diese Schlüssel werden nicht auf dem Server gespeichert und nur in Ihrem Browser angezeigt. Ihr privater Schlüssel kann nicht wiederhergestellt werden, wenn Sie ihn verlieren. Erstellen Sie eine Sicherungskopie und bewahren Sie alle Kopien an einem sicheren Ort auf.",
     "manageAccount":{
       "refundStake":"In diesem Abschnitt können Sie CPU, NET und RAM verwalten, Privilegien für das Konto vergeben, Konto- und globale Limits festlegen, Transaktionen mit obligatorischer Verzögerung im Falle eines Fehlers abbrechen, Prämien beanspruchen sowie auf einen eindeutig lesbaren Namen wetten.",
@@ -550,7 +550,7 @@
         "answer": "We don't store your keys, they located in your Browser local storage, so we don't know them and can't restore. Remember: We do not store any user private data."
       },
       {
-        "question": "Can I stake/unstake my EOS in your wallet?",
+        "question": "Can I stake/unstake my JUN in your wallet?",
         "answer": "Yes, you can perform these actions also as others: vote, delegate, create new accounts and much more. Just log in your account."
       },
       {
@@ -559,19 +559,19 @@
       },
       {
         "question": "Do you support Airdrops?",
-        "answer": "We support all major EOS airdrops, contact us in <a href='{{link}}'>telegram</a> if we missed the good one."
+        "answer": "We support all major JUN airdrops, contact us in <a href='{{link}}'>telegram</a> if we missed the good one."
       },
       {
         "question": "I am developer, can I use your code?",
         "answer": "Yes, we have created open source software, so you can fork or update it."
       },
       {
-        "question": "Can I restore my EOS wallet in other device?",
+        "question": "Can I restore my JUN wallet in other device?",
         "answer": "Yes, you can restore your wallet in any device. You should only know your Private keys or be logged in Scatter."
       },
       {
         "question": "Houston, we have a problem. Who can help me?",
-        "answer": "In case you have problems in connection to our wallet, work with accounts, managing your EOS and others - just contact us via <a href='{{link}}'>telegram</a>, we would be happy to assist you."
+        "answer": "In case you have problems in connection to our wallet, work with accounts, managing your JUN and others - just contact us via <a href='{{link}}'>telegram</a>, we would be happy to assist you."
       }
     ]
   }

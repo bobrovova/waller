@@ -101,7 +101,7 @@ export class BuyRamComponent {
           tr.buyram({
             payer: model.payer,
             receiver: model.recipient,
-            quant: String(model.ram.toFixed(4)) + ' EOS'
+            quant: String(model.ram.toFixed(4)) + ' JUN'
           })
         })
         this.dialogsService.showSuccess(await this.translate.get('buy-sell-ram.operation-completed').toPromise())

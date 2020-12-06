@@ -4,9 +4,12 @@
   display: block !important;
   padding: 0;
   font-size: 12px;
-  background: $blue;
+  background: $white;
   &.shadow-container{
     z-index: $block_z_index + 2;
+  }
+  .navbar-toggler-icon {
+    color: $dark-blue;
   }
   .top-line{
     display: flex;
@@ -54,11 +57,13 @@
         width: 25px;
       }
       .navbar-brand{
-        font-family: $ff_title;
-        color: $white;
-        font-weight: $fw_semi;
+        //font-family: $ff_title;
+        font-family: 'Open Sans';
+        color: #222B45;
+        font-weight: $fw_bold;
         text-align: left;
         font-size: $fz_logo;
+        line-height: 26px;
       }
     }
 
@@ -66,12 +71,13 @@
       display: flex;
       align-items: center;
       position: relative;
-      margin-right: 100px;
       .dropdown-wrapp{
         margin-left: 40px;
         .dropdown{
-          width: 150px;
           font-size: $fz;
+          .testselect {
+            color: white !important;
+          }
         }
       }
       
@@ -108,6 +114,11 @@
           .dropdown{
             width: 150px;
             font-size: $fz_small;
+            .mat-form-field-wrapper {
+              .mat-form-field-flex {
+                padding-right: 15px;
+              }
+            }
           }
         }
         
@@ -127,6 +138,7 @@
   .bottom-line{
     background: $white_with_blue;
     white-space: nowrap;
+    box-shadow: inset 0px 1px 1px #EFF2F7;
     .link-wrapp{
       display: flex;
       padding: 0;
@@ -165,15 +177,16 @@
       .link{
         padding: 13px 5px;
         width: 100%;
-        font-family: $ff_title;
-        color:  $blue;
+        font-family: $ff;
+        color:  #8F9BB3;
         text-decoration: none;
         text-align: center;
         font-size: $fz;
-        font-weight: $fw_semi;
         &.active-link {
-          background-color: $purple;
-          color: $black;
+          color: #3366FF;
+          border-bottom-width: 4px;
+          border-bottom-color: #3366FF;
+          border-bottom-style: solid;
         }
         p {
           margin-bottom: 0;
@@ -222,6 +235,7 @@
         height: 0;
         overflow: hidden;
         transition: height 0.5s;
+        box-shadow: inset 0px 1px 1px #EFF2F7;
       .link-wrapp{
         flex-direction: column;
       }

@@ -60,8 +60,8 @@ export class UndelegateComponent {
         tr.undelegatebw({
           from: model.stakeOwner,
           receiver: model.stakeHolder.toLowerCase(),
-          unstake_net_quantity: String(model.net.toFixed(4)) + ' EOS',
-          unstake_cpu_quantity: String(model.cpu.toFixed(4)) + ' EOS'
+          unstake_net_quantity: String(model.net.toFixed(4)) + ' JUN',
+          unstake_cpu_quantity: String(model.cpu.toFixed(4)) + ' JUN'
         }, options)
       })
       this.dialogsService.showSuccess(await this.translate.get('delegate.operation-completed').toPromise())
