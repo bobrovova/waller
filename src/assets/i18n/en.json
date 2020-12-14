@@ -355,7 +355,7 @@
   "footer":{
     "copyright": "Copyright",
     "info": {
-      "text1": "EosWebWallet offers a free, open-source, client-oriented interface for transferring JUN & Tokens. Private key info is stored locally by you. You are responsible for your security. EosWebWallet is not the creator of, and does not have any control over, any of the Digital Assets that software program allows you to use. ",
+      "text1": "Our web wallet offers a free, open-source, client-oriented interface for transferring JUN & Tokens. Private key info is stored locally by you. You are responsible for your security. Our web wallet is not the creator of, and does not have any control over, any of the Digital Assets that software program allows you to use. ",
       "text2": "In case you have noticed a vulnerability in the software, please inform us at email@email.com"
     }
   },
@@ -473,7 +473,7 @@
     "voter-producer": "Voter Producer"
   },
   "info":{
-    "transferTokens": "Send JUN and tokens to one or more users directly without intermediaries using EosWebWallet. Be careful when entering the address of the recipient, as the transaction can not be withdrawn in case of an error. You can also import a CSV file with recipient data to transfer digital assets.",
+    "transferTokens": "Send JUN and tokens to one or more users directly without intermediaries using our web wallet. Be careful when entering the address of the recipient, as the transaction can not be withdrawn in case of an error. You can also import a CSV file with recipient data to transfer digital assets.",
     "generateKeyPairs": "You can generate a pair of Your keys to access Your account. These keys are not stored on the server and are displayed only in Your browser. Your private key can not be restored if You lose it. Make a back-up and keep all copies in separate secure locations.",
     "manageAccount":{
       "refundStake":"The section allows You to manage CPU, NET and RAM, endow privileges to the account, set account & global limits, cancel transactions with mandatory delay in case of an error, claim rewards as well as bet on a unique readable name.",
