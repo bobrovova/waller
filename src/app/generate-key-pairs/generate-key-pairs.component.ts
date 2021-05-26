@@ -44,7 +44,7 @@ export class GenerateKeyPairsComponent implements OnInit {
   async onSubmit () {
     ecc.randomKey().then(privateKey => {
       this.privKey = privateKey // wif
-      this.pubKey = ecc.privateToPublic(privateKey)
+      this.pubKey = ecc.privateToPublic(privateKey).replace("EOS", "JUN")
       console.log(this.privKey)
       console.log(this.pubKey)
     })

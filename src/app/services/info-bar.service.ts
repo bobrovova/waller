@@ -46,13 +46,13 @@ export class InfoBarService implements OnInit, OnDestroy {
   constructor (private data: AccountService) {}
 
   subscribe = interval(1000).subscribe(val => {
-    if (this.isLoggedIn !== LoginState.out) {
+    if (this.isLoggedIn && this.isLoggedIn !== LoginState.out) {
       this.getInfo(this.accountName)
     }
   })
 
   ngOnInit () {
-    if (this.isLoggedIn !== LoginState.out) {
+    if (this.isLoggedIn && this.isLoggedIn !== LoginState.out) {
       this.getInfo(this.accountName)
     }
   }

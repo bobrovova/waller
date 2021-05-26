@@ -26,7 +26,7 @@ export class AccountService {
    )
   }
   findByKey (body: string): Observable<any> {
-    return this.httpClient.post(this.protocol + this.currentNetwork + ':' + this.port + '/v1/history/get_key_accounts' , body).pipe(
+    return this.httpClient.post(this.protocol + this.currentNetwork + ':' + this.port + '/v1/chain/get_accounts_by_authorizers' , body).pipe(
       catchError(err => {
         return of(false)
       })

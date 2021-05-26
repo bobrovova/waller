@@ -169,13 +169,13 @@ async SelectNameAndPermission(publicKey: string){
 
     let data
     for (let i = 0; i < 10; i++) {
-      data = await this.accountService.findByKey('{"public_key":"' + publicKey + '"}').toPromise()
-      if (data && data.account_names.length) {
+      data = await this.accountService.findByKey('{"keys":["' + publicKey + '"]}').toPromise()
+      if (data && data.accounts.length) {
         break
       }
     }
 
-    if (!data || !data.account_names.length) {
+    if (!data || !data.accounts.length) {
       const dialogConfig = new MatDialogConfig()
       dialogConfig.closeOnNavigation = true
       dialogConfig.data = { message: await this.translations.get('dialogs.account-not-found').toPromise() }
@@ -295,23 +295,15 @@ async SelectNameAndPermission(publicKey: string){
     }
 
     let accounts = []
-    for (const account of data.account_names) {
+    const account = data.accounts[0]
+    let permissions
+    try {
+      permissions = await this.accountService.findByName('{"account_name":"' + account.account_name + '"}').toPromise()
+    } catch {}
 
-      let permissions
-      for (let i = 0; i < 10; i++) {
-        try {
-          permissions = await this.accountService.findByName('{"account_name":"' + account + '"}').toPromise()
-          }
-        catch{}
-      if (permissions) {
-        break
-      }
-    }
-
-      if (permissions) {
-        for (const item of permissions.permissions) {
-          accounts.push([account.toString(), item.perm_name])
-        }
+    if (permissions) {
+      for (const item of permissions.permissions) {
+        accounts.push([account.account_name.toString(), item.perm_name])
       }
     }
 
@@ -350,13 +342,13 @@ async SelectNameAndPermission(publicKey: string){
 
       let data
       for (let i = 0; i < 10; i++) {
-        data = await this.accountService.findByKey('{"public_key":"' + publicKey + '"}').toPromise()
-        if (data && data.account_names.length) {
+        data = await this.accountService.findByKey('{"keys":["' + publicKey + '"]}').toPromise()
+        if (data && data.accounts.length) {
           break
         }
       }
 
-      if (!data || !data.account_names.length) {
+      if (!data || !data.accounts.length) {
         const dialogConfig = new MatDialogConfig()
         dialogConfig.closeOnNavigation = true
         dialogConfig.data = { message: await this.translations.get('dialogs.account-not-found').toPromise() }
@@ -441,13 +433,13 @@ async SelectNameAndPermission(publicKey: string){
     let pubKey = this.cryptoService.decrypt(this.publicKey, this.passBase64)
     let data
     for (let i = 0; i < 10; i++) {
-      data = await this.accountService.findByKey('{"public_key":"' + pubKey + '"}').toPromise()
-      if (data && data.account_names.length) {
+      data = await this.accountService.findByKey('{"keys":["' + pubKey + '"]}').toPromise()
+      if (data && data.accounts.length) {
         break
       }
     }
 
-    if (!data || !data.account_names.length) {
+    if (!data || !data.accounts.length) {
       const dialogConfig = new MatDialogConfig()
       dialogConfig.closeOnNavigation = true
       dialogConfig.data = { message: await this.translations.get('dialogs.account-not-found').toPromise() }

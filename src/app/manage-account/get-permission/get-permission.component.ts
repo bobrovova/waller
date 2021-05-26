@@ -48,7 +48,6 @@ export class GetPermissionComponent implements OnInit {
         this.buttonUsed = false
         return
       }
-      console.log(data.permissions)
       this.permissions = data.permissions.map(perm => perm.perm_name)
     } catch (error) {
       this.dialogsService.showFailure(error)

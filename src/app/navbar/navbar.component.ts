@@ -293,13 +293,13 @@ export class NavbarComponent {
     let pubKey = this.cryptoService.decrypt(this.loginService.publicKey, this.loginService.pass)
     let data
     for (let i = 0; i < 10; i++) {
-      data = await this.accountService.findByKey('{"public_key":"' + pubKey + '"}').toPromise()
-      if (data && data.account_names.length) {
+      data = await this.accountService.findByKey('{"keys":["' + pubKey + '"]}').toPromise()
+      if (data && data.accounts.length) {
         break
       }
     }
 
-    if (!data || !data.account_names.length) {
+    if (!data || !data.accounts.length) {
       return false
     }
     let accountNotFoundMesage = this.translate.get('dialogs.account-not-found').toPromise()

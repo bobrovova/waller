@@ -217,8 +217,8 @@ export class FindAccountComponent implements OnInit {
         this.acoountsInf = []
         this.successKey = true
         this.accounts = data
-        for (let index in this.accounts.account_names) {
-          this.data.findByName('{"account_name":"' + this.accounts.account_names[index] + '"}').subscribe(
+        for (let index in this.accounts.accounts) {
+          this.data.findByName('{"account_name":"' + this.accounts.accounts[index] + '"}').subscribe(
             data => {
               this.result = data
               this.result.cpu_stacked = this.result.total_resources.cpu_weight
