@@ -9,9 +9,10 @@ import { LocalStorage, LocalStorageService } from 'ngx-webstorage'
 import { TranslateService } from '@ngx-translate/core'
 import * as LedgerActions from '../../ledger'
 
-declare var Eos: any
-import * as Eos from 'eosjs'
-const { ecc } = Eos.modules
+import { ECC, Api, JsonRpc, RpcError, JsSignatureProvider as Provider} from 'eosjs'
+const { ecc } = ECC
+
+const { JsSignatureProvider } = Provider
 
 @Injectable({
   providedIn: 'root'
@@ -132,7 +133,7 @@ export class LoginService {
         return
       }
       // eos = (window as any).eosPlugin.eos(network, Eos, {}, 'https')
-      eos = this.factoryPluginService.currentPlugin.plugin.eos(network, Eos, {}, 'https')
+      //eos = this.factoryPluginService.currentPlugin.plugin.eos(network, Eos, {}, 'https')
       // const identity = await (window as any).eosPlugin.getIdentity(network)
 
       const identity = await this.factoryPluginService.currentPlugin.plugin.getIdentity(network)
@@ -143,12 +144,17 @@ export class LoginService {
     else if (this.isLoggedIn === LoginState.publicKey) {
 
       let decodedPrivateKey = this.cryptoService.decrypt(this.privateKey)
+      console.log(decodedPrivateKey)
 
-      eos = Eos({
+      const rpc = new JsonRpc(this.protocol + this.currentNetwork + ':' + this.port, {});
+      const signatureProvider = new JsSignatureProvider([decodedPrivateKey]);
+      eos = new Api({ rpc, signatureProvider });
+
+      /*eos = Eos({
         httpEndpoint: this.protocol + this.currentNetwork + ':' + this.port,
         chainId: this.currentChainId,
         keyProvider: [decodedPrivateKey]
-      })
+      })|*/
 
     }
     else if (this.isLoggedIn === LoginState.ledger) {
@@ -176,11 +182,11 @@ export class LoginService {
       alert(await this.translations.get(`errors.${this.factoryPluginService.currentPlugin.name}-not`).toPromise())
       return
     }
-    eos = Eos({
+    /*eos = Eos({
       httpEndpoint: this.protocol + this.currentNetwork + ':' + this.port,
       chainId: this.currentChainId,
       keyProvider: [this.factoryPluginService.currentPlugin.plugin]
-    })
+    })*/
 
     return eos
   }

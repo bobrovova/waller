@@ -60,15 +60,26 @@ export class DelegateComponent {
 
       this.dialogsService.showSending(await this.translate.get('dialogs.transaction-wil-be-sent').toPromise(),
        await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise())
-      await this.eos.transaction(tr => {
-        tr.delegatebw({
-          from: this.accountName,
-          receiver: model.recipient.toLowerCase(),
-          stake_net_quantity: String(model.net.toFixed(4)) + ' JUN',
-          stake_cpu_quantity: String(model.cpu.toFixed(4)) + ' JUN',
-          transfer: Number(model.transfer | 0)
-        }, options)
-      })
+        await this.eos.transact({
+          actions: [{
+            account: 'eosio',
+            name: 'delegatebw',
+            authorization: [{
+              actor: this.accountName,
+              permission: this.permission,
+            }],
+            data: {
+              from: this.accountName,
+              receiver: model.recipient.toLowerCase(),
+              stake_net_quantity: String(model.net.toFixed(4)) + ' SYS',
+              stake_cpu_quantity: String(model.cpu.toFixed(4)) + ' SYS',
+              transfer: Number(model.transfer | 0),
+            }
+          }]
+        }, {
+          blocksBehind: 3,
+          expireSeconds: 30,
+        })
       this.dialogsService.showSuccess(await this.translate.get('undelegate.operation-completed').toPromise())
     } catch (error) {
       if (error.type === 'account_missing') {

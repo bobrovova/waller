@@ -201,12 +201,13 @@ export class InfoBarService implements OnInit, OnDestroy {
 
   private setTokensGreymassSymbol (tokens): string {
     let tokenStringTemp = ''
-    tokens.forEach(rez => {
+    /*tokens.forEach(rez => {
       tokenStringTemp += rez.amount + ' ' + rez.symbol + ', '
       let precision = rez.amount.toString().split('.')[1] ? rez.amount.toString().split('.')[1].length : 0
       this.addUserSymbol(rez.symbol, rez.code, precision)
-    })
-    return tokenStringTemp.substring(0, tokenStringTemp.length - 2)
+    })*/
+    // return tokenStringTemp.substring(0, tokenStringTemp.length - 2)
+    return tokenStringTemp
   }
 
   private setTokensEosflareSymbol (tokens, accountName): string {

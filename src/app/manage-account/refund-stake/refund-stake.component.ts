@@ -49,10 +49,21 @@ export class RefundStakeComponent {
      await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise())
 
     try {
-      await this.eos.transaction(tr => {
-        tr.refund({
-          owner: this.owner.toLowerCase()
-        }, options)
+      await this.eos.transact({
+        actions: [{
+          account: 'eosio',
+          name: 'refund',
+          authorization: [{
+            actor: this.accountName,
+            permission: this.permission,
+          }],
+          data: {
+            owner: this.owner.toLowerCase()
+          }
+        }]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30,
       })
       this.dialogsService.showSuccess(await this.translate.get('common.operation-completed').toPromise())
     } catch (error) {

@@ -42,7 +42,7 @@ export class AccountService {
 
   getTokensGreymass (accountName: string): Observable<any> {
     return this.httpClient.post(
-      ConfigService.settings.eosTokens.greymass, '{"account":"' + accountName + '"}').pipe(
+      ConfigService.settings.eosTokens.greymass, '{"account":"' + accountName + '", "code": "eosio.token"}').pipe(
       catchError(err => {
         return of(false)
       })

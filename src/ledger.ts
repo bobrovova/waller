@@ -6,7 +6,6 @@ import * as fcbuffer from 'fcbuffer'
 import * as assert from 'assert'
 import * as asn1 from 'asn1-ber'
 
-declare var Eos: any
 import * as Eos from 'eosjs'
 
 const CLA = 0xD4

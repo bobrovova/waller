@@ -3,11 +3,10 @@ import { ConfigService } from '../services/config.service'
 import { LocalStorage } from 'ngx-webstorage'
 import { LoginState } from '../models/login-state.model'
 
-declare var Eos: any
-import * as Eos from 'eosjs'
+import { ECC } from 'eosjs'
 import { LoginComponent } from '../login/login.component'
 
-var { ecc } = Eos.modules
+var { ecc } = ECC
 
 @Component({
   selector: 'app-generate-key-pairs',

@@ -71,24 +71,41 @@ export class TransferTokensComponent {
     this.loginService.setupEos().then(async obj => {
       this.eos = obj.eos
       this.network = obj.network
-      const options = { authorization: [`${this.accountName}@${this.permission}`] }
+      const options = { authorization: [{ actor: this.accountName, permission: this.permission}] }
 
       let message = await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise()
       let title = await this.translate.get('dialogs.transaction-wil-be-sent').toPromise()
       this.dialogsService.showSending(message, title)
       try {
         for (let item of model) {
+          console.log(item)
+          console.log(this.symbols)
           let tokenItem = this.symbols.filter(p => p[0] == item.symbol)
-          let account = tokenItem[0][1]
-          let precision = Number(tokenItem[0][2])
-          await this.eos.transaction(account, tr => {
-            tr.transfer(this.accountName, item.recipient.toLowerCase(), item.quantity.toFixed(precision) + ' ' + item.symbol, item.memo, options)
-        })
+          let account = 'eosio.token'
+          let precision = Number(4)
+          console.log(this.eos)
+          await this.eos.transact({
+            actions: [{
+              account,
+              name: 'transfer',
+              data: {
+                from: this.accountName,
+                to: item.recipient.toLowerCase(),
+                quantity: item.quantity.toFixed(precision) + ' ' + item.symbol,
+                memo: item.memo,
+              },
+              ...options
+            }]
+          }, {
+            blocksBehind: 3,
+            expireSeconds: 30,
+          })
       }
         this.dialogsService.showSuccess(await this.translate.get('transfer-tokens.transfer-completed').toPromise())
         this.buttonUsed = false
         this.bar.Refresh()
       } catch (err) {
+        console.log(err)
         if (err.code === 402) {
           this.dialogsService.showInfo(err.message)
         } else {

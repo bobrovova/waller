@@ -50,19 +50,31 @@ export class UndelegateComponent {
         this.eos = obj.eos
         this.network = obj.network
       }
-      const options = { authorization: [`${this.accountName}@${this.permission}`] }
 
       this.dialogsService.showSending(
         await this.translate.get('dialogs.transaction-wil-be-sent').toPromise(),
         await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise()
       )
-      await this.eos.transaction(tr => {
-        tr.undelegatebw({
-          from: model.stakeOwner,
-          receiver: model.stakeHolder.toLowerCase(),
-          unstake_net_quantity: String(model.net.toFixed(4)) + ' JUN',
-          unstake_cpu_quantity: String(model.cpu.toFixed(4)) + ' JUN'
-        }, options)
+
+      await this.eos.transact({
+        actions: [{
+          account: 'eosio',
+          name: 'undelegatebw',
+          authorization: [{
+            actor: this.accountName,
+            permission: this.permission,
+          }],
+          data: {
+            from: model.stakeOwner,
+            receiver: model.stakeHolder.toLowerCase(),
+            unstake_net_quantity: String(model.net.toFixed(4)) + ' SYS',
+            unstake_cpu_quantity: String(model.cpu.toFixed(4)) + ' SYS',
+            transfer: false,
+          }
+        }]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30,
       })
       this.dialogsService.showSuccess(await this.translate.get('delegate.operation-completed').toPromise())
     } catch (error) {

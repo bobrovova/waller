@@ -5,7 +5,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { Subscription } from 'rxjs'
 import { TranslateService } from '@ngx-translate/core'
 import * as CryptoJS from 'crypto-js'
-import * as Eos from 'eosjs'
+import { ECC } from 'eosjs'
 import { LocalStorage, LocalStorageService } from 'ngx-webstorage'
 import { FactoryPluginService, ScatterService, LoginService, ConfigService, AccountService, CryptoService, GAnalyticsService } from '../services'
 import { LoginState } from '../models/login-state.model'
@@ -15,8 +15,7 @@ import { FailureDialogComponent } from '../dialogs/failure-dialog/failure-dialog
 import { InfoDialogComponent } from '../dialogs/info-dialog/info-dialog.component'
 import * as LedgerActions from '../../ledger'
 
-declare var Eos: any
-const { ecc } = Eos.modules
+const { ecc } = ECC
 
 @Component({
   selector: 'app-login',
@@ -329,8 +328,11 @@ async SelectNameAndPermission(publicKey: string){
     try {
       let publicKey: string
       try {
+        console.log(event.target.value)
+        console.log(ecc.privateToPublic(event.target.value, "JUN"))
         publicKey = ecc.privateToPublic(event.target.value).replace(/^.{3}/g, 'JUN');
-      } catch {
+      } catch (e) {
+        console.log(e)
         this.model.publicKey = ''
         this.model.accountName = ''
         this.model.permission = ''
