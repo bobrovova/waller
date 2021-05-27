@@ -94,46 +94,19 @@ export class NavbarComponent {
 
     this.networks = []
     this.networks.push(new Network(
-      'eos.greymass.com',
-      'Mainnet (Greymass)',
+      '103.66.180.61',
+      'Mainnet (China)',
       NetworkChaindId.MainNet,
-      443,
-      NetworkProtocol.Https
+      8080,
+      NetworkProtocol.Http
     ))
+
     this.networks.push(new Network(
-      'api.eosnewyork.io',
-      'Mainnet (JUN New York)',
+      '103.66.180.61',
+      'Mainnet (DE)',
       NetworkChaindId.MainNet,
-      443,
-      NetworkProtocol.Https
-    ))
-    this.networks.push(new Network(
-      'api.eosn.io',
-      'Mainnet (JUN Nation)',
-      NetworkChaindId.MainNet,
-      443,
-      NetworkProtocol.Https
-    ))
-    this.networks.push(new Network(
-      'api.franceos.fr',
-      'Mainnet (Franceos)',
-      NetworkChaindId.MainNet,
-      443,
-      NetworkProtocol.Https
-    ))
-    this.networks.push(new Network(
-      'jungle.eosio.cr',
-      'Jungle (Costa Rica)',
-      NetworkChaindId.Jungle,
-      443,
-      NetworkProtocol.Https
-    ))
-    this.networks.push(new Network(
-      'jungle2.cryptolions.io',
-      'Jungle (Cryptolines)',
-      NetworkChaindId.Jungle,
-      443,
-      NetworkProtocol.Https
+      8081,
+      NetworkProtocol.Http
     ))
 
     if (this.userNetworks) {

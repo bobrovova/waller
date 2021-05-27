@@ -15,6 +15,6 @@ export enum NetworkProtocol {
 }
 
 export enum NetworkChaindId {
-    MainNet = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+    MainNet = '60fb0eb4742886af8a0e147f4af6fd363e8e8d8f18bdf73a10ee0134fec1c551',
     Jungle = '038f4b0fc8ff18a4f0842a8f0564611f6e96e8535901dd45e43ac8691a1c4dca'
 }
