@@ -94,19 +94,11 @@ export class NavbarComponent {
 
     this.networks = []
     this.networks.push(new Network(
-      '103.66.180.61',
+      'china.junona.info',
       'Mainnet (China)',
       NetworkChaindId.MainNet,
-      8080,
-      NetworkProtocol.Http
-    ))
-
-    this.networks.push(new Network(
-      '103.66.180.61',
-      'Mainnet (DE)',
-      NetworkChaindId.MainNet,
-      8081,
-      NetworkProtocol.Http
+      80,
+      NetworkProtocol.Https
     ))
 
     if (this.userNetworks) {
