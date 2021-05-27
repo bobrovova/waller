@@ -97,7 +97,7 @@ export class NavbarComponent {
       'china.junona.info',
       'Mainnet (China)',
       NetworkChaindId.MainNet,
-      80,
+      443,
       NetworkProtocol.Https
     ))
 
