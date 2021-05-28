@@ -6,8 +6,7 @@
         "protocol": "https://"
     },
     "eosTokens": {
-        "greymass": "https://eos.greymass.com:443/v1/chain/get_currency_balances",
-        "eosflare": "https://api-pub.eosflare.io/v1/eosflare/get_account"
+        "greymass": "https://china.junona.info/v1/chain/get_currency_balance"
     },
     "vector": "KUyewuyf2uvlcvbasucqwyv23vjw",
     "twitterLink": "https://twitter.com",
