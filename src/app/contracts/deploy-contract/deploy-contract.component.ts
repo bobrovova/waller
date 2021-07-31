@@ -75,9 +75,30 @@ export class DeployContractComponent {
       }
 
       this.dialogsService.showSending(await this.translate.get('dialogs.transaction-wil-be-sent').toPromise(),
-       await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise())
+      await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise())
 
-      await this.eos.setcode(this.model.account.toLowerCase(), this.model.type, this.model.version, this.model.byteCode)
+      await this.eos.transact({
+        actions: [
+          {
+            account: 'eosio',
+            name: 'setcode',
+            authorization: [
+              {
+                actor: this.model.account.toLowerCase(),
+                permission: 'active',
+              },
+            ],
+            data: {
+              account: this.model.account.toLowerCase(),
+              code: this.model.byteCode,
+            },
+          },
+        ],
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30,
+      })
+
       this.dialogsService.showSuccess(await this.translate.get('common.operation-completed').toPromise())
     } catch (error) {
       if (error.code === 402) {

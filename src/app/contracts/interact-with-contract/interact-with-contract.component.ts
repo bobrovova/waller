@@ -77,12 +77,10 @@ export class InteractWithContractComponent {
         return
       }
 
-      let contract = await eos.contract(this.contractName)
-
-      this.model.interface = JSON.stringify(contract.fc.abi)
+      let contract = await eos.getContract(this.contractName)
+      this.model.interface = JSON.stringify(contract.actions)
       if (this.model.interface == null) throw new Error(("Abi wasn't successfuly extracted"))
-
-      this.displayActions(contract.fc.abi)
+      this.displayActions(contract)
       this.dialogsService.showSuccess(await this.translate.get('common.operation-completed').toPromise())
     } catch (err) {
       this.dialogsService.showFailure(err)
@@ -93,15 +91,23 @@ export class InteractWithContractComponent {
   displayActions (abi: object) {
     try {
       this.abi = abi as IContract
-      this.model.actions = this.abi.actions.map(({ name }) => name)
-    } catch {
+      console.log(this.abi.actions)
+      this.abi.actions.forEach((key, value) => {
+        this.model.actions.push(value)
+      });
+      //this.model.actions = this.abi.actions.map(({ key }) => key)
+    } catch (err) {
+      console.log(err);
       this.model.actions = []
     }
   }
 
   onChange () {
-    let struct = this.abi.structs.filter(s => s.name === this.model.action)
-    this.fields = this.getTypesEos(struct[0].fields as IContractFields[])
+    let struct = this.abi.actions.get(this.model.action);
+    console.log(struct)
+    //let struct = this.abi.structs.filter(s => s.name === this.model.action)
+    //this.fields = this.getTypesEos(struct[0].fields as IContractFields[])
+    this.fields = this.getTypesEos(struct.fields);
   }
 
   // TODO not yet with data types - all fields are of sting type
@@ -121,12 +127,18 @@ export class InteractWithContractComponent {
       data: itemsData
     }
 
+    console.log(actionsObject)
+
     try {
-      await this.eos.transaction({
-        actions: [
-          actionsObject
-        ]
-      })
+      console.log(this.eos);
+      console.log('1')
+      await this.eos.transact({
+        actions: [actionsObject]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30,
+      });
+      console.log('here2')
       this.dialogsService.showSuccess(await this.translate.get('common.operation-completed').toPromise())
     } catch (error) {
       if (error.code === 402) {
@@ -153,8 +165,8 @@ export class InteractWithContractComponent {
         fields = fields.concat(this.getFieldsRecurse(field))
       })
     } else {
-      let typeEos = this.abi.types.filter(s => s.new_type_name === fieldsStruct.type)
-      fieldsStruct.typeEos = (typeEos.length) ? typeEos[0].type : fieldsStruct.type
+      let typeEos = this.abi.types.get(fieldsStruct.type)
+      fieldsStruct.typeEos = typeEos ? typeEos.type : fieldsStruct.type
 
       typeEos = EosService.typesEos.types.filter(s => s.name === fieldsStruct.typeEos)
       fieldsStruct.typeEos = (typeEos.length) ? typeEos[0] : EosService.typesEos.defaultType

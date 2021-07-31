@@ -69,7 +69,6 @@ export class CreateAccountComponent {
       this.network = obj.network
 
       const options = { authorization: [`${this.accountName}@${this.permission}`] }
-      console.log('Here1')
 
       await this.eos.transact({
         actions: [{
