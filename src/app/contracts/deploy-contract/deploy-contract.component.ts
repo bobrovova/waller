@@ -15,6 +15,16 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
+function base64ToHex(str) {
+  const raw = atob(str);
+  let result = '';
+  for (let i = 0; i < raw.length; i++) {
+    const hex = raw.charCodeAt(i).toString(16);
+    result += (hex.length === 2 ? hex : '0' + hex);
+  }
+  return result.toUpperCase();
+}
+
 @Component({
   selector: 'app-deploy-contract',
   templateUrl: './deploy-contract.component.html',
@@ -58,9 +68,13 @@ export class DeployContractComponent {
 
     let self = this
     reader.onload = function () {
+      console.log(reader.result)
+      const base64 = reader.result.slice(reader.result.indexOf(';base64,')).slice(8);
+      const hex = base64ToHex(base64)
+      console.log(hex)
       self.fileBase64 = reader.result.slice(reader.result.indexOf(';base64,')).slice(8);
       (document.getElementById('byteCode') as HTMLInputElement).value = atob(self.fileBase64)
-      self.model.byteCode = atob(self.fileBase64)
+      self.model.byteCode = hex
     }
     reader.readAsDataURL(input.files[0])
   }
@@ -77,6 +91,10 @@ export class DeployContractComponent {
       this.dialogsService.showSending(await this.translate.get('dialogs.transaction-wil-be-sent').toPromise(),
       await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise())
 
+      console.log(this.model.byteCode)
+      let code = this.model.byteCode;
+      if (code.length % 2 == 1) code = "0"+code;
+
       await this.eos.transact({
         actions: [
           {
@@ -91,8 +109,8 @@ export class DeployContractComponent {
             data: {
               account: this.model.account.toLowerCase(),
               code: this.model.byteCode,
-              vmtype: '0',
-              vmversion: '0',
+              vmtype: 0,
+              vmversion: 0,
             },
           },
         ],
@@ -103,6 +121,7 @@ export class DeployContractComponent {
 
       this.dialogsService.showSuccess(await this.translate.get('common.operation-completed').toPromise())
     } catch (error) {
+      console.log(error)
       if (error.code === 402) {
         this.dialogsService.showInfo(error.message)
       } else {

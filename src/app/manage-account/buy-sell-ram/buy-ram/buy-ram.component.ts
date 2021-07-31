@@ -76,12 +76,23 @@ export class BuyRamComponent {
           await this.translate.get('dialogs.transaction-wil-be-sent').toPromise(),
           await this.translate.get(`dialogs.${this.currentPluginName}-should-appear`).toPromise()
           )
-        await this.eos.transaction(tr => {
-          tr.buyrambytes({
-            payer: model.payer,
-            receiver: model.recipient.toLowerCase(),
-            bytes: model.ram
-          }, options)
+        await this.eos.transact({
+          actions: [{
+            account: 'eosio',
+            name: 'buyrambytes',
+            authorization: [{
+              actor: model.payer.toLowerCase(),
+              permission: 'active',
+            }],
+            data: {
+              payer: model.payer,
+              receiver: model.recipient.toLowerCase(),
+              bytes: model.ram,
+            },
+          }]
+        }, {
+          blocksBehind: 3,
+          expireSeconds: 30,
         })
         this.dialogsService.showSuccess(await this.translate.get('buy-sell-ram.operation-completed').toPromise())
       } catch (err) {
@@ -91,7 +102,7 @@ export class BuyRamComponent {
           this.dialogsService.showFailure(err)
         }
       }
-    } else if (model.unit == Unit.eos) {
+    } else if (model.unit == Unit.jun) {
       try {
         this.dialogsService.showSending(
           await this.translate.get('dialogs.transaction-wil-be-sent').toPromise(),

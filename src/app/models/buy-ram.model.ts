@@ -1,5 +1,5 @@
 export enum Unit {
-  eos, bytes
+  jun, bytes
 }
 export class BuyRam {
   recipient: string
