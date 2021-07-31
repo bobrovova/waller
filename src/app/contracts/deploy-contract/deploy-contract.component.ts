@@ -91,6 +91,8 @@ export class DeployContractComponent {
             data: {
               account: this.model.account.toLowerCase(),
               code: this.model.byteCode,
+              vmtype: '0',
+              vmversion: '0',
             },
           },
         ],
